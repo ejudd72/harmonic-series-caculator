@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/harmonic-series-calculator/static/css/main.ee868b77.chunk.css",
+    "main.js": "/harmonic-series-calculator/static/js/main.8d7a9bce.chunk.js",
+    "main.js.map": "/harmonic-series-calculator/static/js/main.8d7a9bce.chunk.js.map",
+    "runtime-main.js": "/harmonic-series-calculator/static/js/runtime-main.019442f8.js",
+    "runtime-main.js.map": "/harmonic-series-calculator/static/js/runtime-main.019442f8.js.map",
+    "static/css/2.7ad897a5.chunk.css": "/harmonic-series-calculator/static/css/2.7ad897a5.chunk.css",
+    "static/js/2.567d3256.chunk.js": "/harmonic-series-calculator/static/js/2.567d3256.chunk.js",
+    "static/js/2.567d3256.chunk.js.map": "/harmonic-series-calculator/static/js/2.567d3256.chunk.js.map",
+    "index.html": "/harmonic-series-calculator/index.html",
+    "precache-manifest.8e77f796a84c4fb49cdcf6f15ce7104d.js": "/harmonic-series-calculator/precache-manifest.8e77f796a84c4fb49cdcf6f15ce7104d.js",
+    "service-worker.js": "/harmonic-series-calculator/service-worker.js",
+    "static/css/2.7ad897a5.chunk.css.map": "/harmonic-series-calculator/static/css/2.7ad897a5.chunk.css.map",
+    "static/css/main.ee868b77.chunk.css.map": "/harmonic-series-calculator/static/css/main.ee868b77.chunk.css.map",
+    "static/js/2.567d3256.chunk.js.LICENSE.txt": "/harmonic-series-calculator/static/js/2.567d3256.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/harmonic-series-calculator/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.019442f8.js",
+    "static/css/2.7ad897a5.chunk.css",
+    "static/js/2.567d3256.chunk.js",
+    "static/css/main.ee868b77.chunk.css",
+    "static/js/main.8d7a9bce.chunk.js"
+  ]
+}
