@@ -48,18 +48,14 @@ export const calculateFrequencyFromNotation = note => {
 
   const calculation = Math.pow(Math.pow(2, 1 / 12), semitonesAway) * 440;
 
-  console.log("frequency is:", calculation.toFixed(5));
-
   return calculation.toFixed(5);
 };
 
 export const producePartials = (frequency, numberOfPartials) => {
-  console.log("from producePartials: ", frequency, numberOfPartials);
   //calculation to produce partials
   let partials = [];
   for (let i = 0; i <= numberOfPartials; i += 1) {
     let newVal = frequency * i;
-    console.log(calculateNotationFromFrequency(newVal));
     partials.push({
       frequency: newVal,
       pitch: calculateNotationFromFrequency(newVal),
@@ -72,6 +68,7 @@ export const producePartials = (frequency, numberOfPartials) => {
 };
 
 const calculateNotationFromFrequency = frequency => {
+  console.log("calculation starts, frequency: ", frequency);
   let numberSemitonesAwayFrom440 =
     (12 / Math.log(2)) * Math.log(frequency / 440);
 
@@ -79,13 +76,13 @@ const calculateNotationFromFrequency = frequency => {
 
   const getPitchClass = () => {
     const keepAboveTwelve =
-      roundedSemitonesAway < 1
+      roundedSemitonesAway < 0
         ? roundedSemitonesAway + 12
         : roundedSemitonesAway;
-    console.log(keepAboveTwelve);
 
+    console.log("keep above twelve gives: ", keepAboveTwelve);
     switch (keepAboveTwelve) {
-      case 0 || 12:
+      case 12:
         return "A";
       case 1:
         return "A#/Bb";
@@ -110,23 +107,29 @@ const calculateNotationFromFrequency = frequency => {
       case 11:
         return "G#/Ab";
       default:
-        return "IDK";
+        return "A+";
     }
   };
   const getOctave = () => {
     const pitchClass = getPitchClass();
+
     let stepOne = Math.floor(numberSemitonesAwayFrom440 / 12) + 4;
 
-    console.log("step one:; ", stepOne);
-    const addOneConditions = ["A", "A#/Bb", "B"];
+    console.log("pitchClass", pitchClass);
+    console.log("stepOne returns ", stepOne);
 
-    if (addOneConditions.indexOf(pitchClass) === -1) {
-      return stepOne + 1;
+    const addOneConditions = ["A+", "A#/Bb", "B"];
+
+    if (addOneConditions.indexOf(pitchClass) !== -1) {
+      return stepOne;
     }
-    return stepOne;
+
+    return stepOne + 1;
   };
 
-  return { pitchClass: getPitchClass(), octave: getOctave() };
+  let pitchClass = getPitchClass() === "A+" ? "A" : getPitchClass();
+
+  return { pitchClass, octave: getOctave() };
 };
 
 const getDeviation = frequency => {
